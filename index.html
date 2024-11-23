@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Birthday Mohammad Anas Wani</title>
+    <style>
+      /* Import Google Font */
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styling */
+      body {
+        overflow: hidden;
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        font-family: "Pacifico", cursive;
+      }
+
+      /* Birthday Message */
+      h1 {
+        margin-top: 20px;
+        position: relative;
+        font-size: 3em;
+        color: #fff;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 2s ease-in-out;
+        z-index: 2;
+      }
+
+      /* Fade-in Animation */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Cake Container */
+      .cake-container {
+        position: relative;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+      }
+
+      /* Cake Styling */
+      .cake {
+        position: relative;
+        width: 220px;
+        height: 240px;
+      }
+
+      .layer {
+        position: absolute;
+        width: 200px;
+        height: 60px;
+        background-color: #fff;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        left: 10px;
+        box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .layer-bottom {
+        bottom: 0;
+        background-color: #d291bc;
+      }
+
+      .layer-middle {
+        bottom: 60px;
+        background-color: #ecafaf;
+      }
+
+      .layer-top {
+        bottom: 120px;
+        background-color: #f9d1d1;
+      }
+
+      /* Icing */
+      .icing {
+        position: absolute;
+        width: 220px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .icing-bottom {
+        bottom: 50px;
+      }
+
+      .icing-middle {
+        bottom: 110px;
+      }
+
+      .icing-top {
+        bottom: 170px;
+      }
+
+      /* Sprinkles */
+      .sprinkles {
+        position: absolute;
+        width: 200px;
+        height: 60px;
+        left: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        pointer-events: none;
+      }
+
+      .sprinkle {
+        width: 5px;
+        height: 10px;
+        background-color: red;
+        border-radius: 2px;
+        transform: rotate(45deg);
+      }
+
+      .sprinkle:nth-child(odd) {
+        background-color: yellow;
+      }
+
+      .sprinkle:nth-child(even) {
+        background-color: blue;
+      }
+
+      .sprinkles-bottom {
+        bottom: 0;
+      }
+
+      .sprinkles-middle {
+        bottom: 60px;
+      }
+
+      .sprinkles-top {
+        bottom: 120px;
+      }
+
+      /* Candles */
+      .candles {
+        position: absolute;
+        bottom: 180px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .candle {
+        width: 10px;
+        height: 30px;
+        background-color: #fff;
+        position: relative;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .candle:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          45deg,
+          #ff6b81 25%,
+          transparent 25%,
+          transparent 50%,
+          #ff6b81 50%,
+          #ff6b81 75%,
+          transparent 75%,
+          transparent
+        );
+        background-size: 10px 10px;
+      }
+
+      .candle.flame::after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -5px;
+        width: 20px;
+        height: 20px;
+        background-color: gold;
+        border-radius: 50%;
+        animation: flicker 0.5s infinite;
+      }
+
+      /* Flame Animation */
+      @keyframes flicker {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Buttons */
+      .cake-buttons {
+        margin-top: 20px;
+      }
+
+      .cake-buttons button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin: 0 10px;
+        cursor: pointer;
+        background-color: #ff6b81;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .cake-buttons button:hover {
+        background-color: #ff4757;
+      }
+
+      /* Cut Cake Animation */
+      .cake.cut .layer,
+      .cake.cut .icing,
+      .cake.cut .sprinkles {
+        animation: cutCake 1s forwards;
+      }
+
+      @keyframes cutCake {
+        to {
+          transform: translateY(200px);
+          opacity: 0;
+        }
+      }
+
+      /* Fireworks */
+      .firework {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: transparent;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px #fff;
+        animation: firework 1s ease-out forwards;
+      }
+
+      @keyframes firework {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(5);
+        }
+      }
+
+      /* Balloons */
+      .balloon {
+        position: absolute;
+        bottom: -150px;
+        width: 60px;
+        height: 80px;
+        background-color: #ff6b81;
+        border-radius: 50% 50% 45% 45%;
+        animation: floatUp 6s ease-in-out infinite;
+      }
+
+      .balloon::after {
+        content: "";
+        position: absolute;
+        top: 70px;
+        left: 28px;
+        width: 2px;
+        height: 60px;
+        background-color: #555;
+      }
+
+      /* Balloon Float Animation */
+      @keyframes floatUp {
+        0% {
+          transform: translateX(0) translateY(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-100px) translateY(-800px);
+          opacity: 0;
+        }
+      }
+
+      /* Different Balloons */
+      .balloon:nth-child(2) {
+        left: 20%;
+        background-color: #ff9a9e;
+        animation-delay: 2s;
+      }
+
+      .balloon:nth-child(3) {
+        left: 40%;
+        background-color: #fcb69f;
+        animation-delay: 4s;
+      }
+
+      .balloon:nth-child(4) {
+        left: 60%;
+        background-color: #ffafbd;
+        animation-delay: 1s;
+      }
+
+      .balloon:nth-child(5) {
+        left: 80%;
+        background-color: #fad0c4;
+        animation-delay: 3s;
+      }
+
+      /* Confetti Styling */
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        animation: confettiFall 5s linear infinite;
+        opacity: 0;
+      }
+
+      /* Confetti Fall Animation */
+      @keyframes confettiFall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(800px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* Different Confetti */
+      .confetti:nth-child(6) {
+        left: 10%;
+        animation-delay: 0s;
+        background-color: #f6d365;
+      }
+
+      .confetti:nth-child(7) {
+        left: 30%;
+        animation-delay: 1s;
+        background-color: #fda085;
+      }
+
+      .confetti:nth-child(8) {
+        left: 50%;
+        animation-delay: 2s;
+        background-color: #a1c4fd;
+      }
+
+      .confetti:nth-child(9) {
+        left: 70%;
+        animation-delay: 3s;
+        background-color: #c2e9fb;
+      }
+
+      .confetti:nth-child(10) {
+        left: 90%;
+        animation-delay: 4s;
+        background-color: #d4fc79;
+      }
+
+      /* Easter Egg */
+      #easter-egg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.5s ease-in-out;
+        z-index: 100;
+      }
+
+      #easter-egg.show {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      #easter-egg h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #ff6b81;
+      }
+
+      #easter-egg p {
+        font-size: 1.2em;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Happy Birthday<br />Mohammad Anas Wani</h1>
+
+    <!-- Cake Container -->
+    <div class="cake-container">
+      <div class="cake">
+        <!-- Cake layers -->
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="layer layer-top"></div>
+        <!-- Icing -->
+        <div class="icing icing-bottom"></div>
+        <div class="icing icing-middle"></div>
+        <div class="icing icing-top"></div>
+        <!-- Sprinkles -->
+        <div class="sprinkles sprinkles-bottom">
+          <!-- Sprinkles -->
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+        </div>
+        <div class="sprinkles sprinkles-middle">
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+        </div>
+        <div class="sprinkles sprinkles-top">
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+        </div>
+        <!-- Candles -->
+        <div class="candles">
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+        </div>
+      </div>
+      <!-- Buttons to animate the cake -->
+      <div class="cake-buttons">
+        <button id="light-candles">Light Candles</button>
+        <button id="cut-cake">Cut Cake</button>
+        <button id="celebrate">Celebrate!</button>
+      </div>
+    </div>
+
+    <!-- Balloons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Confetti -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+
+    <!-- Easter Egg -->
+    <div id="easter-egg">
+      <h2>Surprise!</h2>
+      <p>You found the hidden message! Wishing you a fantastic year ahead!</p>
+    </div>
+
+    <!-- Audio Element -->
+    <audio
+      id="cake-sound"
+      src="https://www.soundjay.com/buttons/sounds/button-3.mp3"
+    ></audio>
+
+    <script>
+      // Light Candles
+      document
+        .getElementById("light-candles")
+        .addEventListener("click", function () {
+          var candles = document.querySelectorAll(".candle");
+          candles.forEach(function (candle) {
+            candle.classList.toggle("flame");
+          });
+        });
+
+      // Cut Cake
+      document
+        .getElementById("cut-cake")
+        .addEventListener("click", function () {
+          var cake = document.querySelector(".cake");
+          cake.classList.add("cut");
+          playSound();
+        });
+
+      // Play Sound
+      function playSound() {
+        var sound = document.getElementById("cake-sound");
+        sound.currentTime = 0;
+        sound.play();
+      }
+
+      // Celebrate with Fireworks
+      document
+        .getElementById("celebrate")
+        .addEventListener("click", function () {
+          for (var i = 0; i < 15; i++) {
+            createFirework();
+          }
+        });
+
+      function createFirework() {
+        var firework = document.createElement("div");
+        firework.classList.add("firework");
+        firework.style.left = Math.random() * window.innerWidth + "px";
+        firework.style.top = Math.random() * window.innerHeight + "px";
+        firework.style.backgroundColor = getRandomColor();
+        document.body.appendChild(firework);
+        setTimeout(function () {
+          firework.remove();
+        }, 1000);
+      }
+
+      function getRandomColor() {
+        var colors = [
+          "#ff6b81",
+          "#f6d365",
+          "#fda085",
+          "#a1c4fd",
+          "#c2e9fb",
+          "#d4fc79",
+          "#84fab0",
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      // Easter Egg
+      var cakeClicks = 0;
+      document.querySelector(".cake").addEventListener("click", function () {
+        cakeClicks++;
+        if (cakeClicks == 5) {
+          document.getElementById("easter-egg").classList.add("show");
+        }
+      });
+    </script>
+  </body>
+</html>
