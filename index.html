@@ -418,6 +418,23 @@
         font-size: 1.2em;
         color: #333;
       }
+
+      /* Image Styling */
+      #anas-image {
+        position: absolute;
+        width: 200px;
+        height: auto;
+        left: calc(50% - 100px);
+        top: 50%;
+        transform: translateY(-50%) scale(0);
+        transition: transform 0.5s ease-in-out;
+        z-index: 99;
+        cursor: pointer;
+      }
+
+      #anas-image.show {
+        transform: translateY(-50%) scale(1);
+      }
     </style>
   </head>
   <body>
@@ -494,11 +511,11 @@
       <p>You found the hidden message! Wishing you a fantastic year ahead!</p>
     </div>
 
+    <!-- Image of Anas -->
+    <img id="anas-image" src="anas.png" alt="Anas Image" />
+
     <!-- Audio Element -->
-    <audio
-      id="cake-sound"
-      src="https://www.soundjay.com/buttons/sounds/button-3.mp3"
-    ></audio>
+    <audio id="cake-sound" src="./happy-birthday.mp3"></audio>
 
     <script>
       // Light Candles
@@ -527,13 +544,14 @@
         sound.play();
       }
 
-      // Celebrate with Fireworks
+      // Celebrate with Fireworks and Image
       document
         .getElementById("celebrate")
         .addEventListener("click", function () {
           for (var i = 0; i < 15; i++) {
             createFirework();
           }
+          showAnasImage();
         });
 
       function createFirework() {
@@ -561,7 +579,20 @@
         return colors[Math.floor(Math.random() * colors.length)];
       }
 
-      // Easter Egg
+      // Show Anas Image
+      function showAnasImage() {
+        var image = document.getElementById("anas-image");
+        image.classList.add("show");
+      }
+
+      // Click on Anas Image to show Easter Egg
+      document
+        .getElementById("anas-image")
+        .addEventListener("click", function () {
+          document.getElementById("easter-egg").classList.add("show");
+        });
+
+      // Easter Egg (Original functionality retained)
       var cakeClicks = 0;
       document.querySelector(".cake").addEventListener("click", function () {
         cakeClicks++;
